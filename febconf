@@ -1,0 +1,16 @@
+src = "src/main.cpp"
+out = "build/d2s1"
+flags = "-std=c++17 -Wall -Wextra -O2 -Iinclude"
+
+build {
+	mkdir -p build
+	g++ ${flags} ${src} -o ${out} -lsfml-graphics -lsfml-window -lsfml-system
+}
+
+run {
+	./${out}
+}
+
+clean {
+	rm -rf build
+}
